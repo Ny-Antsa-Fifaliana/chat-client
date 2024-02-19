@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Michroma&family=Open+Sans:wght@300;400;500&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tourney:wght@100&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.outerContainer{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.outerContainer .echat{
+    color:#1a73e8;
+    font-size: x-large;
+    font-weight: bold;
+    letter-spacing: .3rem;
+    opacity: 1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.btn__join{
+    width: 100%;
+}

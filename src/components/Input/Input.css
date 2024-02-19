@@ -1,0 +1,67 @@
+.outer__input {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f3f6fb;
+    color:#3c4043;
+}
+
+
+.input__message {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    gap: 8px;
+}
+
+
+.sendIcon{
+    font-size: medium;
+}
+.outer__input .empty{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: gray;
+}
+.outer__input .empty p{
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+/* --------------   Media queries   ---------------- */
+@media (max-width: 1024px){
+    .empty p{
+        font-size: .7rem;
+    }
+}
+@media (max-width: 768px){
+    .empty p{
+        font-size: .6rem;
+    }
+}
+@media (max-width: 500px){
+    .outer__input {
+        flex-direction: column-reverse;
+    }
+    .input__message, .outer__input{
+        margin: 0;
+        padding: 0 0 1rem 0 ;
+    }
+    .input__message{
+        padding-bottom: 0;
+        padding-top: .5rem;
+        padding-left: 1rem;
+    }
+    .custom-label{
+        font-size: 5px;
+    }
+    
+}

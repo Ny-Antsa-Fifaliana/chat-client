@@ -1,0 +1,66 @@
+/* for current user send message */
+.justifyEnd{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: .5%;
+    gap: 8px;
+    margin-bottom: .8rem;
+}
+
+.justifyEnd .backgroundBlue{
+    background-color: #1a73e8;
+    border-radius: 1rem 1rem 0 1rem;
+    padding: 0rem .5rem 0 .5rem;
+    max-width: 70%;
+}
+
+.justifyEnd .backgroundBlue p{
+    margin: 0;
+    padding: .4rem;
+    font-size: .9rem;
+    color: white;
+}
+
+
+/* for user send */
+.justifyStart{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: .5%;
+    gap: 8px;
+    margin-bottom: .8rem;
+}
+.justifyStart .sentText{
+    margin: 0;
+    font-size: .8rem;
+    color: rgb(156, 156, 156);
+}
+.justifyStart .containerTextSender{
+    background:#f3f6fb;
+    border-radius: 0 1rem 1rem 1rem;
+    padding: 0rem .5rem 0 .5rem;
+    max-width: 70%;
+}
+.justifyStart .containerTextSender p{
+    margin: 0;
+    padding: .4rem;
+    font-size: .9rem;
+}
+
+
+
+
+/* admin text */
+.adminText{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: .7rem;
+    color: rgb(173, 173, 173);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+}

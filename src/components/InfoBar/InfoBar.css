@@ -1,0 +1,30 @@
+
+.btn__deconnected a{
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.pInfoBar{
+    font-family: "Poppins", sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+}
+.spanInfoBar{
+    font-size: .7rem;
+}
+.btn__deconnected .exit{
+    font-size: 1.3rem;
+}
+.BarTop .logo{
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+/* ---------------  Media query  -------------- */
+@media (max-width: 200px){
+    .spanInfoBar{
+        display: none;
+    }
+}

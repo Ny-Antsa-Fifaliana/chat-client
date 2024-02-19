@@ -1,0 +1,190 @@
+#outerMessages {
+    display: flex;
+    flex: 10;
+    height: 100%;
+    overflow: hidden;
+}
+
+.firstContainer{
+    display: flex;
+    flex: 1;
+    padding: 0;
+}
+.secondContainer{
+    flex: 2;
+    overflow-y: auto;
+    padding: 1rem;  
+    scrollbar-width: none;
+}
+.secondContainer::-webkit-scrollbar{
+    display: none;
+}
+
+/* -------------------- */
+.card-message{
+    padding: 1rem;
+    margin-top: 1rem;
+    min-height: 100%;
+    background-color: white;  
+}
+.onlineContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch; 
+}
+
+
+.onlineContainer .textInfo{
+    text-align: center;
+    margin-top: 1rem;
+}
+.personOuter {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.personOuter p{
+    margin-top: .5rem;
+    color:#3c4043;
+    font-size: 1.1rem;
+}
+.onLine {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    flex-grow: 1; 
+    height: calc(100% - 250px);
+}
+
+.onLine .titleOnline{
+    padding:.3rem;
+    margin: 0 0 .5rem 0;
+    text-align: center;
+    font-family: "Poppins",sans-serif;
+    background:#f3f6fb;
+    color:#646368;
+    gap: 0;
+    font-size: .8rem;
+}
+.UserOnline{
+    overflow-y: auto;
+}
+
+.listeUserOnline{
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+}
+.divUserOnline{
+    display: flex;
+    flex-direction: row;
+    height: 2rem;
+    align-items: center;
+    gap: 10px;
+    flex: 4;
+}
+.divUserOnline p{
+    font-size: .9rem;
+    color: gray;
+}
+.umptyDivOnline{
+    flex: 1;
+}   
+
+.tab{
+    display: none;
+}
+
+
+/* --------------   Media queries   ---------------- */
+@media (max-width: 1024px){
+    .firstContainer, .personOuter p, .divUserOnline p{
+        font-size: .9rem;
+    }
+}
+@media (max-width: 500px){
+    #outerMessages{
+        display: none;
+    }
+    .tab{
+        display: flex;
+        flex-direction: column;
+        flex: 10;
+        height: 66vh;
+    }
+    .tabOnline{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+       
+    }
+    .personOuterTab{
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color:#3c4043;
+    }
+    .onLineTab{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        flex-grow: 1;
+        margin-top: 1rem;
+    }
+    .titleOnlineTab{
+        padding:.3rem;
+        margin: 0 0 .5rem 0;
+        text-align: center;
+        font-family: "Poppins",sans-serif;
+        background:#f3f6fb;
+        color:#646368;
+        border-radius: 5px 5px 5px 5px;
+        gap: 0;
+        font-size: .9rem;
+    }
+    .UserOnlineTab{
+        overflow-y: auto;
+        max-height: calc(100vh - 21rem);
+        padding: 5px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .UserOnlineTab::-webkit-scrollbar{
+        display: none;
+    }
+
+    .divUserOnlineTab, .listeUserOnlineTab{
+        display: flex;
+    }
+    .divUserOnlineTab{
+        gap: 10px;
+    }
+    .listeUserOnlineTab{
+        margin-top: .8rem;
+    }
+
+
+    .tabDiscussion{
+        height: 100vh;
+    }
+    .card-messageTab{
+        margin-top: -25px;
+        padding: 0;
+        max-height: calc(100vh - 11.3rem);
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .card-messageTab::-webkit-scrollbar{
+        display: none;
+    }
+  
+}   
