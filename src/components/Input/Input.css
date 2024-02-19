@@ -45,6 +45,7 @@
 @media (max-width: 768px){
     .empty p{
         font-size: .6rem;
+        margin-top: .2rem;
     }
 }
 @media (max-width: 500px){
@@ -62,6 +63,9 @@
     }
     .custom-label{
         font-size: 5px;
+    }
+    .empty p{
+        margin-top: .2rem;
     }
     
 }

@@ -33,7 +33,7 @@ const Join = ()=>{
                     label="Nom de la discussion..."
                     onChange={(e)=>setRoom(e.target.value)} 
                 />
-                <Link className='btn__join' onClick={e=>(!name || !room)? e.preventDefault() : null} to={'/chat?'+encodeURIComponent('name='+name+'&room='+room)}>
+                <Link style={{textDecoration:'none'}} className='btn__join' onClick={e=>(!name || !room)? e.preventDefault() : null} to={'/chat?'+encodeURIComponent('name='+name+'&room='+room)}>
                     <Button fullWidth type='submit' variant="contained">Rejoindre</Button>
                 </Link>
             </Stack>
