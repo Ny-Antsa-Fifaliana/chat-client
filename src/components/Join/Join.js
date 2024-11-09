@@ -17,7 +17,7 @@ const Join = () => {
   return (
     <Stack spacing={6} className="outerContainer">
       <Stack spacing={3} className="container">
-        <p className="echat">inchat</p>
+        <p className="echat">Hairun ChatBox</p>
 
         <TextField
           helperText="Entrez votre pseudo."

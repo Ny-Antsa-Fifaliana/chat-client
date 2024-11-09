@@ -37,7 +37,7 @@ const Chat = () => {
   const [showInput, setShowInput] = useState(true);
 
   const ENDPOINT = "https://torch-tartan-gouda.glitch.me/"; //server url
-  //   const ENDPOINT = "localhost:5000"; //server url
+  // const ENDPOINT = "localhost:5000"; //server url
 
   const location = useLocation(); // Get current URL
   //   const urlDecoded = decodeURIComponent(location.search);
