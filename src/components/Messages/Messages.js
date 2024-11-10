@@ -229,12 +229,12 @@ const Messages = ({ messages, name, usersInRoom, handleTabChange }) => {
             aria-label="basic tabs example"
           >
             <Tab
-              sx={{ fontSize: "12px", color: "#646368" }}
+              sx={{ fontSize: "12px", color: "#11103b" }}
               label="Discussion"
               {...a11yProps(1)}
             />
             <Tab
-              sx={{ fontSize: "12px", color: "#646368" }}
+              sx={{ fontSize: "12px", color: "#11103b" }}
               label="En ligne"
               {...a11yProps(0)}
             />

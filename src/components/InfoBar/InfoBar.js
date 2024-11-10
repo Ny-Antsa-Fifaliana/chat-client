@@ -14,17 +14,24 @@ const InfoBar = ({ room }) => (
       elevation={1}
       style={{
         borderRadius: "0 0 10px 10px",
-        background: "#f3f6fb",
-        color: "#1a73e8",
+        background: "#11103b",
+        color: "#fff",
       }}
     >
       <Toolbar variant="dense" className="BarTop">
         <IconButton
           size="small"
           edge="start"
-          color="inherit"
           aria-label="menu"
-          sx={{ mr: 0.8 }}
+          sx={{
+            mr: 0.8,
+            background:
+              "linear-gradient(to top, #cb161b, #cb161b, #ffaa00,#fff, #fff, #fff, #fff)",
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
         >
           <i className="logo bx bxs-message-rounded-dots"></i>
         </IconButton>
@@ -44,7 +51,7 @@ const InfoBar = ({ room }) => (
               fontFamily: '"Poppins",sans-Serif',
               padding: "0",
               margin: "0",
-              color: "gray",
+              color: "white",
             }}
           >
             {room.charAt(0).toUpperCase() + room.slice(1).toLowerCase()}
@@ -52,7 +59,7 @@ const InfoBar = ({ room }) => (
         </Typography>
         <Button className="btn__deconnected" color="inherit">
           <a href="/">
-            <i className="exit bx bx-exit" style={{ color: "#1a73e8" }}></i>
+            <i className="exit bx bx-exit" style={{ color: "white" }}></i>
           </a>
         </Button>
       </Toolbar>
