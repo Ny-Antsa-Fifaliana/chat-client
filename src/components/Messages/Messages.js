@@ -77,7 +77,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 //   Creation du composant
-const Messages = ({ messages, name, usersInRoom, handleTabChange }) => {
+const Messages = ({
+  messages,
+  name,
+  usersInRoom,
+  handleTabChange,
+  ENDPOINT,
+}) => {
   const chatRefOnline = useRef(null);
   const chatRefDiscussion = useRef(null);
   // for mobile device tab ------------------
@@ -209,7 +215,7 @@ const Messages = ({ messages, name, usersInRoom, handleTabChange }) => {
           <div className="card-message">
             {messages.map((mess, i) => (
               <div key={i}>
-                <Message message={mess} name={name} />
+                <Message message={mess} name={name} ENDPOINT={ENDPOINT} />
               </div>
             ))}
           </div>
@@ -352,7 +358,7 @@ const Messages = ({ messages, name, usersInRoom, handleTabChange }) => {
           <div ref={chatRefDiscussion} className="card-messageTab">
             {messages.map((mess, i) => (
               <div key={i}>
-                <Message message={mess} name={name} />
+                <Message message={mess} name={name} ENDPOINT={ENDPOINT} />
               </div>
             ))}
           </div>

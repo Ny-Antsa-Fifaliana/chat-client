@@ -35,6 +35,7 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [usersInRoom, setUsersInRoom] = useState([]);
   const [showInput, setShowInput] = useState(true);
+  const [files, setFiles] = useState([]);
 
   const ENDPOINT = "https://torch-tartan-gouda.glitch.me/"; //server url
   //const ENDPOINT = "localhost:5000"; //server url
@@ -110,12 +111,56 @@ const Chat = () => {
     e.preventDefault();
     if (message) {
       socket.emit("sendMessage", message, () => setMessage(""));
+    } else {
+      sendFile();
+      setMessage("");
     }
   };
 
   const handleTabChange = (tab) => {
     setShowInput(tab === "discussion");
   };
+
+  // Gérer l'envoi de fichier -----------------------
+  const handleFileChange = (e) => {
+    const selectedFiles = e.target.files;
+    if (selectedFiles.length > 0) {
+      setFiles(Array.from(selectedFiles));
+    }
+  };
+
+  const sendFile = () => {
+    if (files.length > 0) {
+      const formData = new FormData();
+      Array.from(files).forEach((file) => {
+        formData.append("file", file);
+      });
+      formData.append("name", name);
+      formData.append("room", room);
+
+      fetch(ENDPOINT + "/upload", {
+        method: "POST",
+        body: formData,
+        mode: "cors",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Erreur HTTP ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setMessages([
+            ...messages,
+            { user: name, text: data.filePaths.join(", ") },
+          ]);
+          setFiles([]);
+        })
+        .catch((error) => {
+          console.error("Erreur d'upload du fichier:", error);
+        });
+    }
+  }; // -------------------
 
   // Affichage
   return (
@@ -126,16 +171,18 @@ const Chat = () => {
         name={name}
         usersInRoom={usersInRoom}
         handleTabChange={handleTabChange}
+        ENDPOINT={ENDPOINT}
       />
       {showInput && (
         <Input
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}
+          handleFileChange={handleFileChange}
+          files={files}
         />
       )}
     </Stack>
   );
 };
-
 export default Chat;

@@ -2,8 +2,15 @@ import React, { useRef } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./Input.css";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
 
-const Input = ({ message, setMessage, sendMessage }) => {
+const Input = ({
+  message,
+  setMessage,
+  sendMessage,
+  handleFileChange,
+  files,
+}) => {
   const inputRef = useRef(null);
 
   const handleInputFocus = () => {
@@ -38,6 +45,33 @@ const Input = ({ message, setMessage, sendMessage }) => {
             onKeyPress={(e) => (e.key === "Enter" ? sendMessage(e) : null)}
             onFocus={handleInputFocus}
           ></TextField>
+          {/* for send file ------------------------------------------------ */}
+          <div
+            style={{
+              maxWidth: "50px",
+              maxHeight: "50px",
+              fontSize: "10px",
+              overflow: "hidden",
+              marginLeft: "12px",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {files.length > 0 && files[0].name}
+          </div>
+          <Button
+            style={{ borderRadius: "50%" }}
+            onClick={() => document.getElementById("fileInput").click()}
+          >
+            <AttachFileIcon />
+          </Button>
+          <input
+            type="file"
+            id="fileInput"
+            onChange={handleFileChange}
+            multiple
+            style={{ display: "none" }}
+          />
+
           <Button
             style={{ borderRadius: "50%" }}
             onClick={(e) => {
