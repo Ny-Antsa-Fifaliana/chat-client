@@ -37,7 +37,7 @@ const Chat = () => {
   const [showInput, setShowInput] = useState(true);
   const [files, setFiles] = useState([]);
 
-  const ENDPOINT = "https://torch-tartan-gouda.glitch.me"; //server url
+  const ENDPOINT = "https://steadfast-wistful-emperor.glitch.me"; //server url
   //const ENDPOINT = "localhost:5000"; //server url
 
   const location = useLocation(); // Get current URL
