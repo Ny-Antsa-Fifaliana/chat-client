@@ -37,8 +37,8 @@ const Chat = () => {
   const [showInput, setShowInput] = useState(true);
   const [files, setFiles] = useState([]);
 
-  const ENDPOINT = "https://steadfast-wistful-emperor.glitch.me"; //server url
-  //const ENDPOINT = "localhost:5000"; //server url
+  const ENDPOINT = "https://lumbar-phrygian-layer.glitch.me"; //server url
+  //const ENDPOINT = "http://localhost:5000"; //server url
 
   const location = useLocation(); // Get current URL
   //   const urlDecoded = decodeURIComponent(location.search);
@@ -123,18 +123,17 @@ const Chat = () => {
 
   // Gérer l'envoi de fichier -----------------------
   const handleFileChange = (e) => {
-    const selectedFiles = e.target.files;
-    if (selectedFiles.length > 0) {
-      setFiles(Array.from(selectedFiles));
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFiles([selectedFile]);
     }
   };
 
   const sendFile = () => {
     if (files.length > 0) {
       const formData = new FormData();
-      Array.from(files).forEach((file) => {
-        formData.append("file", file);
-      });
+      const file = files[0]; // Récupérer le premier fichier
+      formData.append("file", file);
       formData.append("name", name);
       formData.append("room", room);
 

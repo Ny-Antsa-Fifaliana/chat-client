@@ -68,7 +68,6 @@ const Input = ({
             type="file"
             id="fileInput"
             onChange={handleFileChange}
-            multiple
             style={{ display: "none" }}
           />
 
