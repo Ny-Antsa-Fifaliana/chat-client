@@ -37,7 +37,7 @@ const Chat = () => {
   const [showInput, setShowInput] = useState(true);
   const [files, setFiles] = useState([]);
 
-  const ENDPOINT = "https://woolly-horn-tarsier.glitch.me"; //server url
+  const ENDPOINT = "https://evanescent-understood-fisherman.glitch.me"; //server url
   //const ENDPOINT = "http://localhost:5000"; //server url
 
   const location = useLocation(); // Get current URL
