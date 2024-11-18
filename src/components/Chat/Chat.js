@@ -137,6 +137,13 @@ const Chat = () => {
       formData.append("name", name);
       formData.append("room", room);
 
+      // Ajouter le socket.id
+      if (socket && socket.id) {
+        formData.append("socketId", socket.id);
+      } else {
+        console.error("Socket ID introuvable !");
+        return;
+      }
       fetch(ENDPOINT + "/upload", {
         method: "POST",
         body: formData,
