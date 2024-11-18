@@ -83,6 +83,7 @@ const Messages = ({
   usersInRoom,
   handleTabChange,
   ENDPOINT,
+  socket,
 }) => {
   const chatRefOnline = useRef(null);
   const chatRefDiscussion = useRef(null);
@@ -215,7 +216,12 @@ const Messages = ({
           <div className="card-message">
             {messages.map((mess, i) => (
               <div key={i}>
-                <Message message={mess} name={name} ENDPOINT={ENDPOINT} />
+                <Message
+                  message={mess}
+                  name={name}
+                  ENDPOINT={ENDPOINT}
+                  socket={socket}
+                />
               </div>
             ))}
           </div>

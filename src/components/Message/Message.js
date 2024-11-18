@@ -5,11 +5,10 @@ import ReactEmoji from "react-emoji";
 const Message = ({ message: { user, text }, name, ENDPOINT }) => {
   // variable
   let isSendByCurrentUser = false;
-  const trimedName = name.trim().toLowerCase();
   const isFile = text.startsWith("/uploads/");
   const [isFullScreen, setIsFullScreen] = useState(false);
 
-  if (user === trimedName) {
+  if (user.trim().toLowerCase() === name.trim().toLowerCase()) {
     isSendByCurrentUser = true;
   }
   const handleImageClick = () => {
